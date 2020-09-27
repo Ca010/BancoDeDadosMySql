@@ -50,7 +50,7 @@ select * from tb_personagens where poder_especial > 2000 && 2000;
 
 SELECT * FROM tb_personagens WHERE nome LIKE '%c%';
 
-#seleciona tudo que vem da tabela personagem e junta (inner join) com a tabela classe, nas quais(on) o id_personagem é o mesmo que id_cargo
+#seleciona tudo que vem da tabela personagem e junta (inner join) com a tabela classe, nas quais(on) o id_personagem é mesmo que id_cargo
 select * from tb_personagens INNER JOIN tb_classe ON 
 tb_personagens.id_personagem = tb_classe.id_cargo;
 
