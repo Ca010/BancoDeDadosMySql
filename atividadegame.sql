@@ -18,12 +18,6 @@ id_personagem int,
 primary key (id_cargo),
 constraint fk_cargo foreign key (id_personagem) references tb_personagens (id_personagem));
 
-id_personagem int primary key auto_increment,
-nome varchar(30),
-poder_especial integer,
-soco integer,
-defesa integer,
-CONSTRAINT fk_cargo FOREIGN KEY (id_cargo) REFERENCES tb_classe (id_cargo));
 insert into tb_classe (tipo_classe, tipo_de_arma) values ('Lutador', 'luva de boxe');
 insert into tb_classe (tipo_classe, tipo_de_arma) values ('Feiticeiro', 'poçoes magicas');
 insert into tb_classe (tipo_classe, tipo_de_arma) values ('Bruxo', 'corvo assassino');
@@ -51,6 +45,7 @@ select * from tb_personagens where poder_especial > 2000 && 2000;
 SELECT * FROM tb_personagens WHERE nome LIKE '%c%';
 
 #seleciona tudo que vem da tabela personagem e junta (inner join) com a tabela classe, nas quais(on) o id_personagem é mesmo que id_cargo
+
 select * from tb_personagens INNER JOIN tb_classe ON 
 tb_personagens.id_personagem = tb_classe.id_cargo;
 
