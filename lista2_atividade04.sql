@@ -1,4 +1,3 @@
-drop database db_cidade_das_carnes;
 create database db_cidade_das_carnes;
 use db_cidade_das_carnes;
 
@@ -8,6 +7,7 @@ categoria_bovina varchar(255),
 categoria_suina varchar(255),
 categoria_aves varchar(255),
 primary key (id_categoria),
+id_produto int,
  CONSTRAINT fk_categoria FOREIGN KEY (id_categoria) references tb_produto (id_produto)
 );
 
@@ -41,15 +41,12 @@ select * from tb_produto where produto_preco > 50;
 
 select * from tb_produto where produto_preco between 3 and 60;
 
-SELECT * FROM tb_produto WHERE produto_nome LIKE '%c%';
+SELECT produto_nome FROM tb_produto WHERE produto_nome LIKE '%%';
 
 #seleciona tudo que vem da tabela personagem e junta (inner join) com a tabela classe, nas quais(on) o id_personagem é mesmo que id_cargo
 
 select * from tb_produto INNER JOIN tb_categoria ON 
 tb_produto.id_produto = tb_categoria.id_categoria;
-
-select * from tb_categoria INNER JOIN tb_produto ON tb_categoria.id_categoria = tb_produto.id_produto where tb_produto.produto_preco like '%20%';
-
 
 select * from tb_categoria;
 select * from tb_produto;
